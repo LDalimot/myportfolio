@@ -6,7 +6,7 @@
 
 	<title>Laurenso Dalimot</title>
 
-	<link rel='icon' type='image/ico' href='./Ld.ico.ico'>
+	<link rel='icon' type='image/ico' href='.assets/Ld.ico'>
 	<link rel='stylesheet' href='/global.css'>
 	<link rel='stylesheet' href='/build/bundle.css'>
 
@@ -14,6 +14,9 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+
+	<!--animate-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 	<!--materialize css-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -31,22 +34,24 @@
 <body>
 	
 	<div class="navbar-fixed">
-		<nav class="transparentBG">
+		<nav class="mynav">
 		  <div class="nav-wrapper">
-			<a href="#!" class="brand-logo"><img class="logo" src="logo.png" alt="Cannot Load" height='50px' width="50px"></a>
+			<a href="#!" class="brand-logo"><img class="logo" src="/assets/logo.png" alt="Cannot Load" height='50px' width="50px"></a>
 			<ul class="right hide-on-med-and-down ul">
-			  <li><a href="#home">Home</a></li>
-			  <li><a href="#skills">Skills</a></li>
-			  <li><a href="#projects">Projects</a></li>
-			  <li><a href="#about">About</a></li>
-			  <li><a href="#contact">Contact</a></li>
+			  <li><a href="#home" class="smooth-goto">Home</a></li>
+			  <li><a href="#skills" class="smooth-goto">Skills</a></li>
+			  <li><a href="#projects" class="smooth-goto">Projects</a></li>
+			  <li><a href="#about" class="smooth-goto">About</a></li>
+			  <li><a href="#contact" class="smooth-goto">Contact</a></li>
 			</ul>
+		
 		  </div>
 		</nav>
 	</div>
 
+	
 
-	<div class="div1 row" id="#home">
+	<div class="div1 row" id="home">
 		<div class="col m6">
 			<p> Hello World! I am</p>
 			<h2>{Laurenso Dalimot}</h2>
@@ -66,20 +71,42 @@
 
 	</div>	
 
-	<div class="div2" id="#skills">
+	<div class="div2" id="skills">
 	
-		<p >Hello World! I am</p>
-		<h2>{fullName}!</h2>
-		<p color>Web Developer</p>
+		<h4>Skills</h4>
+
+		<div class="row">
+			<div class="col m2 offset-m1"><img src="/assets/html5.svg"  height="60px" width="60px"><br>HTML5</div>
+			<div class="col m2"><img src="/assets/css3.svg" height="60px" width="60px"><br>CSS3</div>
+			<div class="col m2"><img src="/assets/bootstrap.svg" height="60px" width="60px"><br>BOOTSTRAP</div>
+			<div class="col m2"><img src="/assets/tailwind.svg" height="60px" width="60px"><br>TAILWIND</div>
+			<div class="col m2"><img src="/assets/materialize.svg" height="60px" width="80px"><br>MATERIALIZE</div>
+		</div>
+
+		<div class="row">
+			<div class="col m2 offset-m1"><img src="/assets/javascript.svg" height="60px" width="60px"><br>JAVASCRIPT</div>
+			<div class="col m2"><img src="/assets/jquery.svg" height="60px" width="60px"><br>JQUERY</div>
+			<div class="col m2"><img src="/assets/nodejs.svg" height="60px" width="60px"><br>NODE JS</div>
+			<div class="col m2"><img src="/assets/vue.svg" height="60px" width="60px"><br>VUE JS</div>
+			<div class="col m2"><img src="/assets/svelte.png" height="60px" width="60px"><br>SVELTE</div>
+		</div>
+
+		<div class="row">
+			<div class="col m2 offset-m1"><img src="/assets/php.svg" height="60px" width="60px"><br>PHP</div>
+			<div class="col m2"><img src="/assets/laravel.svg" height="60px" width="60px"><br>LARAVEL</div>
+			<div class="col m2"><img src="/assets/mysql.svg" height="60px" width="60px"><br>MYSQL</div>
+			<div class="col m2"><img src="/assets/git.svg" height="60px" width="60px"><br>GIT</div>
+			<div class="col m2"><img src="/assets/vscode.png" height="60px" width="60px"><br>VS CODE</div>
+		</div>
 		
 	</div>	
 
-	<div class="div3 row" id="#me">
-		<div class="col m12" >
-			<p> Hello World! I am</p>
-			<h2>{fullName}!</h2>
-			<p>Web Developer</p>
-		</div>div>
+	<div class="div3" id="projects">
+		
+		<h4>Projects</h4>
+
+		
+
 	</div>	
 
 	<div class="div4" id="#me">
@@ -92,6 +119,33 @@
 
 
 </body>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+
+$('.smooth-goto').on('click', function() {  
+    $('html, body').animate({scrollTop: $(this.hash).offset().top -64}, 10);
+    return false;
+});
+
+</script>
+
+<script>
+
+$(document).ready(function() {
+        // Transition effect for navbar 
+        $(window).scroll(function() {
+          // checks if window is scrolled more than 500px, adds/removes solid class
+          if($(this).scrollTop() > 500) { 
+              $('.mynav').addClass('solid');
+          } else {
+              $('.mynav').removeClass('solid');
+          }
+        });
+});
+
+</script>
 
 
 </html>
