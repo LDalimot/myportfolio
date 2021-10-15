@@ -55,7 +55,7 @@ color: #303030;
     text-align:center;
     background-color: #303030;
     width: 100%;
-    height: 533px;
+    height: 700px;
     color: white;
 }
 
@@ -67,7 +67,16 @@ color: #303030;
     background-position: center; 
     background-size: 100%; 
     background-attachment: fixed;
-    height:500px;
+    height:700px;
+}
+
+.div4{
+    padding: 10px;
+    text-align:center;
+    background-color: #303030;
+    width: 100%;
+    height: 700px;
+    color: white;
 }
 
 
@@ -104,11 +113,16 @@ color: #303030;
 }
 
 #skills img{
-    margin-top:30px;
+    margin-top:60px;
    
 }
 
 #skills .col:hover{
     transition: all .6s ease-in-out;
     transform: scale(1.2);
+}
+
+#projects .col{
+    margin-top:60px;
+   
 }
